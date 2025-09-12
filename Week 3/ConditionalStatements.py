@@ -1,18 +1,6 @@
 # Created by Jacob Tang
 
-
-
-
-
-
-
-
-
-
-
-
 # 3.1
-
 number = int(input("Enter a number: "))
 
 if number > 0:
@@ -22,10 +10,6 @@ else:
 
 
 # 3.2
-
-
-
-
 score = int(input("Enter your test standards (0-100): "))
 
 if score >= 0:
