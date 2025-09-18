@@ -24,7 +24,6 @@ for i in range(1 , len(word) - 1,2):
 
 print(f"Output = {result}")
 
-'''
 
 # Question 4
 word = ""
@@ -42,3 +41,17 @@ while True:
 
 # Print out the final word
 print(f"The final word is {word}")
+
+
+'''
+
+# Question 5
+
+start = 50
+end = 517
+
+# Assume 50-517 Inclusive
+
+# Start with 51 and stop before 518, take steps of 2
+for i in range(start + 1, end + 1, 2):
+    print(i)
