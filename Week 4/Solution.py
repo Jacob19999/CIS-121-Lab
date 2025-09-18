@@ -24,6 +24,7 @@ for i in range(1,len(word) , 2):
     
 print(f"The result word is {output}")
 
+
 # Question 3
 num = 38
 while num <= 1050:
