@@ -43,3 +43,25 @@ elif int1 <= int3 <= int2:
 .
 
 '''
+
+
+# Question 7
+knuts = int(input("Enter amount in knuts: "))
+
+# Find if we can buy any galleons
+galleons = knuts // (29 * 17)
+knuts_remaining = knuts % (29 * 17)
+
+# See if we can buy Sickles
+sickles = knuts_remaining // 29
+knuts_final = knuts_remaining % 29
+
+message = ""
+if galleons > 0:
+    message += (f"Galleons : {galleons}")
+if sickles > 0:
+    message += (f" Sickles : {sickles} ")
+if knuts_remaining > 0:
+    message += (f" Knuts : {knuts_final}")
+
+print(message)
