@@ -15,6 +15,7 @@ while i < len(word):
     i += 1
 
 # For loop (Starting Position, Ending Position, Step size)
+# Counts from 0 - 9
 for j in range(0, 10, 1):
     break
 
@@ -23,6 +24,7 @@ for letter in word:
     print(letter)
 
 # For loop (Start from 0, end at word length)
+# Counts from 0 to Word length - 1
 for i in range(0, len(word)):
     print(word[i])
 
