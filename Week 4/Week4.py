@@ -1,51 +1,30 @@
 # Week 4
 
-# Question 1
-'''
-larger_num = int(input("Enter the larger Number : "))
-smaller_num = int(input("Enter the larger Number : "))
+# Hints:
 
-num = 0
-while larger_num / 2  > smaller_num:
-    larger_num /= 2
-    num += 1
+# While true run forever
+while True:
+    # Use break to stop the loop!
+    break
 
-print(f"Number of times halved: {num} ")
+word = "banana"
+i = 0
 
-'''
+# While loop that counts up i till length of word - 1
+while i < len(word):
+    i += 1
 
+# For loop (Starting Position, Ending Position, Step size)
+for j in range(0, 10, 1):
+    break
 
-
-# Question 2
-
-# Using a For loop iterate every character
-
-word = input("Enter word ")
-result_word = ""
-pos = 0
-num = 0
-
-print("Option 1")
+# Iterates through each letter of "banana"
 for letter in word:
-   
-    print(f"Loop Count : {num}")
-    num+=1
-    
-    if (pos % 2 == 1) :
-        result_word += word[pos]
-    pos +=1
+    print(letter)
 
-print(f"Result word: {result_word}")
-
-print("Option 2")
-# Starting pos, ending pos, step size
-num2 = 0
-result_word = ""
-for index in range (1 , len(word), 2):
-    print(f"Loop Count : {num2}")
-    num2 += 1
-    result_word += word[index]
-print(f"Result word: {result_word}")
+# For loop (Start from 0, end at word length)
+for i in range(0, len(word)):
+    print(word[i])
 
 
 
