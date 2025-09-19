@@ -37,6 +37,29 @@ while larger_num / 2 > smaller_num:
     num += 1
 
 print(f"Number of times halved: {num} ")
+# Question 1
+larger_num = int(input("Enter the larger Number : "))
+smaller_num = int(input("Enter the larger Number : "))
+count = 0
+
+while larger_num / 2 > smaller_num:
+    larger_num /= 2
+    count += 1
+
+print(f"Number of times halved: {count} ")
+
+
+
+# Question 2
+num2 = 0
+result_word = ""
+for index in range (1 , len(word) - 1, 2):
+    result_word += word[index]
+print(f"Result word: {result_word}")
+
+
+
+
 
 # Question 2
 
