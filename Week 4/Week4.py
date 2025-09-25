@@ -30,7 +30,42 @@ for i in range(0, len(word)):
     print(word[i])
 
 
+# Question 2
+word = input("Enter word ")
+result_word = ""
+pos = 0
+num = 0
 
+for letter in word:
+    if (pos % 2 == 1) :
+        result_word += word[pos]
+    pos +=1
+
+print(f"Result word: {result_word}")
+
+# Starting pos, ending pos, step size another way to do it
+result_word = ""
+for index in range (1 , len(word), 2):
+    result_word += word[index]
+print(f"Result word: {result_word}")
+
+
+# Question 4
+word = ""
+
+# While loop that runs forever
+while True:
+    # Read the user input
+    user_in = input("Enter a letter: ")
+    # if the user typed "done" we stop !
+    if user_in == "done":
+        break
+    else:
+        # Else lets add letter into the word
+        word += user_in
+
+# Print out the final word
+print(f"The final word is {word}")
 
 
 
