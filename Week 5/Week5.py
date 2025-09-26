@@ -1,133 +1,101 @@
 # Written By jacob Tang
 
-# Question 1
+import math
+
 '''
-def pyramid_volume(base, height):
-    volume = (base**2 * height) / 3
-    return volume
+# Question 8
 
-print(f"The volume of the pyramid is {pyramid_volume(3,4)}")
+def pool_time(user_grade, user_time):
+    time_output = ""
 
+    # Question : How can we allow "K" a string 
+    # to be compared with an integer 1-3 
+    # Perhaps K-> Grade 0?
 
-# Question 8 
-# 
+    if user_grade == "K":
+        user_grade == 0
 
-def pool_times(grade, time):
-
-    # Convert K -> 0
-    pool_time = ""
-    if grade == "k":
-        grade = 0
-
-    # Checks grade is K or between 1-3 
-    if 0 <= int(grade) <= 3:
-        if(time == "Morning"):
-            pool_time = "9AM"
+    if 0 <= int(user_grade) <= 3:
+        if user_time == "Morning":
+            time_output = "9am"
         else:
-            pool_time = "1PM"
-
-    elif (4 <= int(grade) <= 8):
-        if(time == "Morning"):
-            pool_time = "10AM"
-        else:
-            pool_time = "2PM"
-
-    elif (9 <= int(grade) <= 12):
-        if(time == "Morning"):
-            pool_time = "11AM"
-        else:
-            pool_time = "3PM"
-
-    return pool_time
+            time_output = "1pm"
+    # Continue ....
 
 
+    return time_output
 
-print(f"Pool Time is : {pool_times("k", "Morning")}")
+input_grade = input("Enter Grade : ")
+input_time = input("Enter Time : ")
+
+print(f"The Pool Time is : {pool_time(input_grade, input_time)}")
 
 
-# Question 11 
+# Question 11
 
 def convert_knuts(knuts):
-    # Knuts , Sickle , Galleons
-    # 1 galleon == 493 Knuts!
-    # 1 sikcle = 29 Knuts
+    output = ""
 
+    # How much is a galleon in terms of knuts 
+    # 29 * 17 = 493 knuts / Galleon
+    # Lets say i have 544 knuts , how many galleons can i afford
+    # 544 // 493 = 1
+    galleon = knuts // 493
 
-    # 1. For the number of knuts how many galleon scan i buy ?
-    galleons = knuts // (493)
-    remaining_knuts = knuts - (galleons *  493)
+    # After buying 1 galleon , how many knuts do i have left ?
+    # 544 - 493 = 51 
+    remaining_knuts = knuts - (galleon * 493)
 
-    # 2. Remaining Knuts, how many sickles can i buy ?
+    # WIth 51 how many sickles can i buy ?
+    # Just one sickle
+    # 51 - 29 = 22
     sickles = remaining_knuts // 29
 
-    # 3. How many remaining Knuts after buying sickles ?
+    # 544 - > 1 Galleon , 1 sicke , and 22 Knuts
     remaining_knuts = remaining_knuts - (sickles * 29)
 
-    output = ""
-
-    if galleons > 0: 
-        output += f"Galleons: {galleons} " 
-    if sickles > 0: 
-        output += f"Sickles: {sickles} "  
-    if knuts > 0 :
-        output += f"Knuts: {remaining_knuts} "
-    
-    
+    if galleon > 0:
+        output = output + f"Galleon: {galleon} "
+    if sickles > 0:
+        output = output + f"sickles: {sickles} "
+    if remaining_knuts > 0:
+        output = output + f"knuts: {remaining_knuts} "
 
     return output
 
-print(convert_knuts(32))
+user_input = int(input("Enter number of Knuts ")) 
+print(f"For {user_input} knuts i can buy: {convert_knuts(user_input)}")
 
-
-# Question 14
-from random import randint
-
-def guess_num(user_guess):
-    output = ""
-    value = randint(0,9)
-
-    if user_guess == "even":
-        if value % 2 == 0:
-            output = "Correct"
-        else:
-            output = "Incorrect"
-    elif user_guess == "odd":
-        if value % 2 != 0:
-            output = "Correct"
-        else:
-            output = "Incorrect"
-
-    return output
-
-user_input = input("Guess the random number , odd or even :")
-print(f"The guess is: {guess_num(user_input)}")
 '''
 
+def is_fever(input):
+    # 1. Find out if the input is in F or C
+    # temp = "98F"
+    # temp[-1] -> F
+    unit = input[-1]
 
+    # 2 . Extract the temperature 
+    # temp[:-1] - > 98
+    temperature = int(input[:-1])
 
-# Function holds the logic ! 
-# Takes in temperature and checks if it is fever 
-def is_fever(temperature):
-
-    # How can we extract the F and C ? Hint word[-1]
-    unit = temperature[-1]
-
-    # If it is F -> 98.6 is a fever 
+    output = False
     if unit == "F":
-        # "99F" -> "99"
-        if float(temperature[:-1]) > 98.6:
-            return True
-        else:
-            return False
-
-    # If it is a C - > 37 is a fever 
+         # 3. Is > 98.6 F a Fever ?
+        if temperature > 98.6 :
+            output = True
+    
     elif unit == "C":
-        # "37C" -> "37"
-        if float(temperature[:-1]) > 37:
-            return True
-        else:
-            return False
+        # 4. If > 37.0 C a Fever ?
+        if temperature > 37 :
+            output = True
+            
+    return output
 
-# Input and print should be outside of the function
-user_input = input("Enter a temperature in F or C ")
-print(f"Is fever ? {is_fever(user_input)}")
+user_input = input("Enter a temperature 00F or 00C: ")
+print(f"is fever {is_fever(user_input)}")
+    
+
+
+
+
+
