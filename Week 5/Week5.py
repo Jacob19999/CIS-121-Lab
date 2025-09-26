@@ -40,7 +40,6 @@ print(f"The pool time is : {pool_time(input_grade, input_time)}")
 
 
 
-'''
 
 
 def covert_knuts(knuts):
@@ -116,32 +115,70 @@ print(f"Number of each item i can buy : {convert_knuts(input_knuts)}")
 
 
 
-
+# Question 2
 
 def is_fever(input_temp):
-
     output = False
 
-    # Check the last character and if F or C
-    # temp = "98F" 
-    # temp[-1] => F
+    # 1. How can we extract the unit ? F or C
     unit = input_temp[-1]
 
-    # How do we extract the temperature
-    # temp = "98F"
-    # int(temp[:-1]) = 98
-    temp = int(input_temp[:-1])
+    # 2. How can we extract the temperature ?
+    temperature = int(input_temp[:-1])
 
-    if unit == "F":
-        if temp > 98.6:
-            output = True
-    
-    elif unit == "C":
-        if temp > 37:
-            output = True
-    
+    # 3. If it is F , > 98.6 = fever
+    if unit == "F" and temperature > 98.6:
+        output = True
+
+    # 4. If it is C , > 37.0 = fever
+    elif unit == "C" and temperature > 37:
+        output = True
+
     return output
-
 
 userinput = input("Enter a temp 00F , 00C : ")
 print(f"This temp {userinput } is fever ? {is_fever(userinput)}")
+
+
+
+def hamming_distance(str1, str2):
+
+    count = 0
+
+    if len(str1) != len(str2) :
+        # Dont run if words are not same length
+        return 0
+    
+    # Literate through each string , since both strings are same
+    for letterPos in range(len(str1)):
+        # If a letter is different , then we +1 
+        if str1[letterPos] != str2[letterPos]:
+            count += 1
+    # Done ! Profit
+    return count
+
+
+input1 = input("String 1 : ")
+input2 = input("String 2 : ")
+print(f"Distance = {hamming_distance(input1, input2)}")
+
+'''
+# Question 8
+
+def last_letters(sentence):
+    encode = ""
+
+    # 1. How to iterature through the characters
+
+    for pos in range(0, len(sentence) - 1):
+        # 2. How can we know the last letter of each word ?
+        # "wingardium levios makes objects float "
+
+        if sentence[pos + 1] == " ":
+            encode += sentence[pos]
+
+    # 3. How do we store the last characters and output it .
+    return encode + sentence[-1]
+
+user_input = input("Enter a spell : ")
+print(f"Encoded Spell is {last_letters(user_input)}")
