@@ -271,27 +271,30 @@ print(f"The guess is: {guess_num(user_input)}")
 
 # Function holds the logic ! 
 # Takes in temperature and checks if it is fever 
-def is_fever(temperature):
+def is_fever(input):
 
-    # How can we extract the F and C ? Hint word[-1]
-    unit = temperature[-1]
+    # 1. Find out if the input is in F or C
+    # temp = "98F"
+    # temp[-1] -> F
+    unit = input[-1]
 
-    # If it is F -> 98.6 is a fever 
+    # 2 . Extract the temperature 
+    # temp[:-1] - > 98
+    temperature = int(input[:-1])
+
+    output = False
     if unit == "F":
-        # "99F" -> "99"
-        if float(temperature[:-1]) > 98.6:
-            return True
-        else:
-            return False
-
-    # If it is a C - > 37 is a fever 
+         # 3. Is > 98.6 F a Fever ?
+        if temperature > 98.6 :
+            output = True
+    
     elif unit == "C":
-        # "37C" -> "37"
-        if float(temperature[:-1]) > 37:
-            return True
-        else:
-            return False
+        # 4. If > 37.0 C a Fever ?
+        if temperature > 37 :
+            output = True
 
-# Input and print should be outside of the function
-user_input = input("Enter a temperature in F or C ")
-print(f"Is fever ? {is_fever(user_input)}")
+    return output
+
+user_input = input("Enter a temperature 00F or 00C: ")
+print(f"is fever {is_fever(user_input)}")
+    
