@@ -162,7 +162,7 @@ input1 = input("String 1 : ")
 input2 = input("String 2 : ")
 print(f"Distance = {hamming_distance(input1, input2)}")
 
-'''
+
 # Question 8
 
 def last_letters(sentence):
@@ -182,3 +182,14 @@ def last_letters(sentence):
 
 user_input = input("Enter a spell : ")
 print(f"Encoded Spell is {last_letters(user_input)}")
+
+
+
+'''
+
+
+w = int(input("W"))
+p = int(input("p"))
+
+for i in range(10):
+    print(w * p)
