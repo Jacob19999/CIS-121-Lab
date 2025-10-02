@@ -1,4 +1,4 @@
-
+'''
 #1
 def skip_letter(word):
     result = []
@@ -42,6 +42,7 @@ def odd_numbers(smaller_num, larger_num):
 print(odd_numbers(37, 1050))
 print(odd_numbers(1, 2000))
 print(odd_numbers(50, 199))
+'''
 
 #5
 def hailstone_seq(n):
@@ -56,7 +57,7 @@ def hailstone_seq(n):
 
 print(hailstone_seq(25))
 print(hailstone_seq(40))
-
+'''
 #6
 def find_factors(num):
     result = []
@@ -119,6 +120,7 @@ print(descending_order(2, 3, 1))
 print(descending_order(10, 1, 25))
 print(descending_order(2, 45, 4))
 
+'''
 #9
 def count(cards):
     total = 0
@@ -150,7 +152,7 @@ def war_of_numbers(numbers):
 print(war_of_numbers([2, 8, 7, 5]))
 print(war_of_numbers([12, 90, 75, 1, 1]))
 print(war_of_numbers([2, 10, 22, 243]))
-
+'''
 #11
 def add_lists(lyst1, lyst2):
     result = []
@@ -263,6 +265,7 @@ def list_of_multiples(num, length):
 print(list_of_multiples(7, 5))
 print(list_of_multiples(12, 10))
 print(list_of_multiples(17, 6))
+'''
 
 #19
 def is_acronym(s, words):
