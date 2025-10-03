@@ -22,10 +22,7 @@ def hailstone_seq(number):
 
 print(f" {hailstone_seq(25)} ")
 
-
-
 # Question 9
-
 # Function takes in a list of cards
 def count(list_of_cards):
 
@@ -44,53 +41,63 @@ deck2 = [ "a", "a", "k", "q", "q", "j"]
 
 print(f"Total Points Deck 1: {count(deck1)}")
 print(f"Total Points Deck 2: {count(deck2)}")
-
-
-
-
-
-
-
-
-
+'''
 
 # Question 19
 
-# How can i iterate through each word, and extract the first letter
-# for word in words:
-#   fist_letter = word[0]
 
-# combine the extracted letters and compare with string s
-# s += fist_letter
+# Examples :
+# is acronym("abc", ["alice", "bob", "charlie"] ) = true
+# is acronym("ab", ["apple", "banana", "cat"]) = false
+# is acronym("ab", ["apple", "", "cat"]) = false
 
-# is length of s is different from the length of words , false
-# len(s) == len(words):
-
+# Hints: 
 
 def is_acronym(s, words):
 
-    # if len is s != words -> false
+    combined_letters = ""
+    
     if len(s) != len(words):
         return False
 
-    # iterate through each word
-    for i in range(0, len(words)):
-        
-        current_word = words[i]
+    for word in words:
+        print(word)
 
-        #   if word == "" -> false
-        if current_word == "":
+        if word == "":
             return False
         
-        #    if word[0] == s[i]
-        if s[i] != current_word[0]:
-            return False
+        first_letter = word[0]
+        combined_letters += first_letter
 
+    if combined_letters != s:
+        return False
+        
     return True
 
+
+words_ = ["alice", "bob", "charlie"]
 s = "abc"
-words = ["alice", "", "charlie"]
+print(is_acronym(s, words_))
 
-print(f"{is_acronym(s, words)}")
 
-'''
+
+def is_acronym(s, words):
+    if len(s) != len(words):
+        return False
+    acronym = ""
+    for word in words:
+        if len(word) == 0:
+            return False
+        acronym += word[0]
+    return s == acronym
+
+print(is_acronym("abc", ["alice", "bob", "charlie"]))
+print(is_acronym("a", ["an", "apple"]))
+print(is_acronym("ngguoy", ["never", "gonna", "give", "up", "on", "you"]))
+print(is_acronym("ab", ["apple", "banana", "cat"]))
+print(is_acronym("ab", ["apple", "", "cat"]))
+
+
+
+
+
