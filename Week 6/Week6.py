@@ -2,6 +2,130 @@
 # Work on Question:
 # 5 , 9 , 19 
 
+# Question 5
+'''
+def hailstone_seq(num):
+    result = [num]
+    while num > 1:
+        if num % 2 == 0:
+            num /= 2
+        else:
+            num = 3 * num + 1
+        result.append(num)
+    return result
+
+print(hailstone_seq(25))
+
+# Question 9
+def count(list_of_cards):
+
+    # We need to keep track of points
+    points = 0
+    
+    # Complete the code
+
+    # Iterating through each card:
+    for card in list_of_cards:
+        # Check each card to compute points
+        # OR if str(card) in ["2", "3", "4", "5", "6"]:
+        # OR if card in [2, 3, 4, 5, 6]:
+        if card in range(2,6):
+            points += 1
+        elif str(card) in ["10", "j","q","k", "a"]:
+            points -= 1
+        
+    return points
+
+# Create the list of cards.
+deck1 = [5, 9, 10, 3, "j", "a", 4, 8, 5]
+deck2 = [ "a", "a", "k", "q", "q", "j"]
+
+print(f"Total Points Deck 1: {count(deck1)}")
+print(f"Total Points Deck 1: {count(deck2)}")
+
+'''
+
+def is_acronymn1(s , list_of_words):
+    
+    # Compare Length
+    if len(s) != len(list_of_words):
+        return False
+
+    first_letters = ""
+
+    # Iterate through each word
+    for word in list_of_words:
+        # For each word....
+        # Check if a word is empty, we can stop here
+        if word == "":
+            return False
+        
+        # if not empty,
+        # Get first Letter of each word
+        # Add each first letter to a variable
+        first_letters += word[0]
+
+    # Compare .
+    if first_letters != s:
+        return False
+
+    return True
+
+def is_acronymn2(s , list_of_words):
+    
+    # Compare Length
+    if len(s) != len(list_of_words):
+        return False
+
+    for i in range(0, len(list_of_words)):
+        if list_of_words[i] == "":
+            return False
+        elif s[i] != list_of_words[i][0]:
+            return False
+
+    return True
+
+words_ = ["alice", "bob", "charlie"]
+s = "abc"
+
+print(is_acronymn1(s, words_))
+print(is_acronymn2(s, words_))
+
+
+
+
+
+
+
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -102,7 +226,7 @@ print(is_acronym(s, words_))
 
 
 # Question 5:
-'''
+
 def hailstone_seq(number):
     # Create an empty List , use number as starting
     output_list = [number]
