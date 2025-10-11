@@ -1,54 +1,102 @@
+
 # Question 4
+def get_name(techid_dict):
+    list_of_name = []
+    # How to iterate through the dict?
+    for key in techid_dict:
+        # How do we extract the name?
+        name = techid_dict[key]
+        # How to add names into a list?
+        list_of_name.append(name)
+
+    return list_of_name
+
+dict = {"01234" : "Evan" , "012341" : "Jacob", "012342" : "Matt"}
+#print(get_name(dict))
 
 
-def get_name(my_dict):
-    # 0. Empty List to store names!
-    names = []
-    # 1. How to iterate through the dictionary ?
-    for key in my_dict:
-        # 2. How do we access the value with the key ?
-        name =  my_dict[key]
-        # 3. How do you put the names in a list ?
-        names.append(name)
-    return names
 
-names_dict = {"123": "Matt Priem" , "456": "Evan Linder", "789": "Jacob" }
-#print(get_name(names_dict))
+
+
 
 # Question 5
-def find_oldest(persons):
-    oldest_name = ""
-    max_age = -1 
+def find_oldest(age_dict):
+    oldest_person = ""
+    max_age = -1
+    # Iterate through the dict
+    for curr_name in age_dict:
+        # Extract the age of the current person
+        curr_age = age_dict[curr_name] 
+        # Compare current persons age with max age
+        if curr_age > max_age:
+            # If current age is larger, update max age
+            max_age = curr_age
+            oldest_person = curr_name
+    # Return the oldest age
+    return oldest_person
 
-    # How do you iterate through the dict ? 
-    for name in persons:
-        age = persons[name]
 
-        # How do you find the oldest age ?
-        if age > max_age:
-            max_age = age
-            # How do you get the name ?
-            oldest_name = name
 
-    return oldest_name
+# Question 6
+dict = {}
 
-persons = {"Emma" : 71 , "Jack" : 45 ,"Olivia" : 82 , "Liam" : 39}
-#print(find_oldest(persons))
+# Create a new entry , M , 1
+dict["M"] = 1
+
+# Increment value
+dict["M"] += 1
 
 # Question 6
 def letter_count(word):
-    count_dict = {}
-    
-    # How do we iterate through the letters in the word?
-    for letter in word:
-        if letter not in count_dict:
-            # If letter is not in dict , add letter to dict
-            count_dict[letter] = 1
+    # Create a empty Dict to store letters and their count
+    letter_count_dict = {}
+    # Iterate through each letter in the word
+    for each_letter in word:
+        # For each letter, we check if the letter is in the dict or not
+        if each_letter not in letter_count_dict:
+            # If not, we set the count as 1
+            letter_count_dict[each_letter] = 1
         else:
-             # If letter is already there , incrememnt value 
-            count_dict[letter] += 1
+            # If it is , then we increment 
+            letter_count_dict[each_letter] += 1
 
-    return count_dict
+    # Output the letter count dict
+    return letter_count_dict
 
-print(letter_count("mississippi"))
+# Question 9a
+
+recipt = {}
+
+recipt["Side Salad"] = 6
+recipt["Chicken Parm"] = 12
+recipt["Cookie"] = 3
+
+print(recipt)
+
+# Question 9b
+def get_total_cost(receipt):
+    total_cost = 0
+    # Iterate through each item in the receipt
+    for each_item in receipt:
+        # Get the cost of each item
+        cost = receipt[each_item]
+        # Sum up the cost of each item.
+        total_cost += cost
+
+    return total_cost
+
+#print(get_total_cost(recipt))
+
+
+
+
+
+
+
+
+dict1 = {"01234" : "Evan" , "01234" : "Jacob", "01234" : "Matt"}
+for techid in dict1:
+    name = dict1[techid]
+    print(name)
+
 
