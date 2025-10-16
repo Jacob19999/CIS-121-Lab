@@ -53,16 +53,11 @@ def is_acronymn1(s , list_of_words):
 
     first_letters = ""
 
-    # Iterate through each word
     for word in list_of_words:
-        # For each word....
-        # Check if a word is empty, we can stop here
+
         if word == "":
             return False
-        
-        # if not empty,
-        # Get first Letter of each word
-        # Add each first letter to a variable
+
         first_letters += word[0]
 
     # Compare .

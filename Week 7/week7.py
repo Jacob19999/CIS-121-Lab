@@ -15,10 +15,6 @@ dict = {"01234" : "Evan" , "012341" : "Jacob", "012342" : "Matt"}
 #print(get_name(dict))
 
 
-
-
-
-
 # Question 5
 def find_oldest(age_dict):
     oldest_person = ""
@@ -34,17 +30,6 @@ def find_oldest(age_dict):
             oldest_person = curr_name
     # Return the oldest age
     return oldest_person
-
-
-
-# Question 6
-dict = {}
-
-# Create a new entry , M , 1
-dict["M"] = 1
-
-# Increment value
-dict["M"] += 1
 
 # Question 6
 def letter_count(word):
@@ -62,6 +47,10 @@ def letter_count(word):
 
     # Output the letter count dict
     return letter_count_dict
+
+
+
+
 
 # Question 9a
 
