@@ -9,16 +9,21 @@ def toss_coin(guess=0):
         return "Incorrect!"
     
 # 2. Game: Odd or Even
-from random import randint
 
 def guess(guess="even"):
     value = randint(0, 9)
-    is_even = value % 2 == 0
-    guessed_even = guess.lower() == "even"
-    if (is_even and guessed_even) or (not is_even and not guessed_even):
-        return "Correct!"
+    guess = guess.lower()
+    
+    if value % 2 == 0:
+        if guess == "even":
+            return "Correct!"
+        else:
+            return "Incorrect!"
     else:
-        return "Incorrect!"
+        if guess == "odd":
+            return "Correct!"
+        else:
+            return "Incorrect!"
 
 # 3. Count duplicates
 def count_duplicates(num1=0, num2=0, num3=0):
@@ -48,6 +53,7 @@ def find_relation(name=""):
         "Han": "Brother in law",
         "R2D2": "Droid"
     }
+    
     return relations.get(name, "Unknown")
 
 # 6. Hailstone Sequence
