@@ -187,16 +187,3 @@ print(f"Encoded Spell is {last_letters(user_input)}")
 
 '''
 
-
-def sort_by_age(x):
-    for i in range(0, len(x)-1):
-        current_min = i
-        for j in range (i+1, len(arr)):
-            if x[j].age < x[current_min].age:
-                current_min = j
-            x[i], x[current_min] = x[current_min], x[i]
-    return x
-
-list = [Person("matt", 38), Person("ashley", 37), Person("cameron", 2), Person("gene", 5), Person("dexter", 7)]
-age_sort= sort_by_age(list)
-print(age_sort)
