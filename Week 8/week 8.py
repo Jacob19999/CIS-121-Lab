@@ -34,8 +34,43 @@ def descending_order(num1, num2 = 15, num3 = 3):
 
     return [a ,b, c]
 
-#print(descending_order(1,2,3))
-#print(descending_order(1))
+print(descending_order(1,2,3))
+print(descending_order(1))
 
 
 # Question 15
+def is_negative(num):
+    if num < 0:
+        return True
+    else:
+        return False
+
+'''
+# Shorter way of writing the same thing !  
+def is_negative(num):
+    return num < 0
+'''
+
+def is_odd(num):
+    if num % 2 != 0:
+        return True
+    else:
+        return False
+
+'''
+# Shorter way of writing the same thing !  
+def is_oddd(num):
+    return num % 2 != 0
+'''
+
+def report_negative_odds(lst_of_nums):
+    output = []
+
+    # We need to check each number , if it is negative and odd.
+    for num in lst_of_nums:
+        if is_negative(num) and is_odd(num):
+            output.append(num)
+
+    return output
+
+print(report_negative_odds([100,-57,12,1,-36,-15]))
