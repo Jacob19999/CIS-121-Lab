@@ -1,3 +1,5 @@
+'''
+
 # Question 15 Week 7
 
 def total_donations(donations_dict):
@@ -32,16 +34,24 @@ def ascending_order(num1, num2 = 5, num3 = 25):
 print(ascending_order(50))
 
 # Question 15
+
+
+# Question 15
 # Helper Function
 def is_negative(num):
     if num < 0:
         return True
     else:
         return False
+    
+def is_negative(num):
+    return num < 0
+
 
 # Helper Function
 def is_odd(num):
     return num % 2 != 0
+
 
 # Main Function
 def report_negative_odd(lyst):
@@ -51,14 +61,36 @@ def report_negative_odd(lyst):
            result_lyst.append(num)
     return result_lyst
 
+'''
 
-word = "banana sunday"
+dict_temp={}
 
-print(list(word[::2]))
+word = "paypalishiring"
+row = 4
+lim = 0
+j = 0
+
+for i in range(0, len(word)):
+    if i > row-1:
+        dict_temp[j] = word[lim : lim + row - 1]
 
 
 
 
+            
+
+dict = {0 : ["p", "a", "y", "p"], 1 : ["-1", "l","a","-1"], 2: ["i", "s", "h", "i"], 3: ["-1","i","r","-1"], 4: ["n","g"]}
+st=""
+counter=0
+
+for j in range(0, len(dict)- 1):
+    for i in dict.values():
+        if i[counter] != "-1":
+            st += i[counter]
+    counter +=1
+
+
+print(st)
 
 
 
