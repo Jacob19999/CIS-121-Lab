@@ -61,50 +61,6 @@ def report_negative_odd(lyst):
            result_lyst.append(num)
     return result_lyst
 
-'''
-
-dict_temp={}
-
-word = "paypalishiring"
-row = 4
-lim = 0
-j = 0
-
-for i in range(0, len(word)):
-    if i > row-1:
-        dict_temp[j] = word[lim : lim + row - 1]
-
-
-
-
-            
-
-dict = {0 : ["p", "a", "y", "p"], 1 : ["-1", "l","a","-1"], 2: ["i", "s", "h", "i"], 3: ["-1","i","r","-1"], 4: ["n","g"]}
-st=""
-counter=0
-
-for j in range(0, len(dict)- 1):
-    for i in dict.values():
-        if i[counter] != "-1":
-            st += i[counter]
-    counter +=1
-
-
-print(st)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -153,6 +109,12 @@ def skip_letter(word):
     return word_lst
 
 print(skip_letter("counterattack"))
+
+'''
+dict1 = {"0123" : 50 , "0234" : 60, "01234" : 70}
+
+print(max(dict1))
+
 
 
 
