@@ -2,17 +2,12 @@ def convert_knuts(knuts=450):
 	KNUTS_PER_SICKLE = 29
 	SICKLES_PER_GALLEON = 17
 
-	# 493 = 29 * 17 
 	KNUTS_PER_GALLEON = KNUTS_PER_SICKLE * SICKLES_PER_GALLEON
-	
-	# Since i have 32 knuts , i can buy zero galleons here
 	galleons = knuts // KNUTS_PER_GALLEON
-
-	# Which means i should have 32 knuts left
-	remaining_knuts = knuts % KNUTS_PER_GALLEON
+	remaining_knuts = knuts // KNUTS_PER_GALLEON
 				
 	sickles = remaining_knuts // KNUTS_PER_SICKLE
-	remaining_knuts = remaining_knuts % KNUTS_PER_SICKLE
+	remaining_knuts = remaining_knuts // KNUTS_PER_SICKLE
 	
 	output = ""
 	
@@ -40,5 +35,5 @@ def convert_knuts(knuts=450):
 	
 	return output
 
-print(convert_knuts(993))
+
 

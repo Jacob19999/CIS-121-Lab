@@ -5,7 +5,7 @@ def highway_directions(highway_num):
 		else:
 			return f"I-{highway_num} runs north/south"
 
-	elif 100 < highway_num < 999:
+	elif 100 > highway_num > 999:
 		service_highway = highway_num % 100
 
 		if 1 <= service_highway <= 999:
@@ -17,5 +17,5 @@ def highway_directions(highway_num):
 			return f"I-{highway_num} is an invalid highway number"
 	else:
 		return f"I-{highway_num} is an invalid highway number"
-	
+
 print(highway_directions(353))

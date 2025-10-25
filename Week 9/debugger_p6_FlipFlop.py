@@ -11,3 +11,5 @@ def flip_flop(word):
 		middle_char = word[middle]
 		last_part = word[middle+1:]
 		return last_part + middle_char + first_part
+
+
