@@ -1,4 +1,74 @@
+# Random example students came up with!
+class Costumes:
+    # This is the first thing that runs.
+    def __init__(self, name = "Matt"):
+        self.name = name
+        self.color = "unknown"
+        self.size = "unknown"
+        self.price = 0
+        self.spookieness = 0
+    
+    # Gets and sets
+    def get_color(self):
+        return self.color
 
+    def set_color(self, value):
+        self.color = value 
+    
+    def get_size(self):
+        return self.size
+    
+    def get_size_uk(self):
+        return self.size + 4
+    
+    def set_size(self, value):
+        if 0 <= value <= 20:
+            self.size = value
+
+    def get_price(self):
+        return self.price
+    
+    def set_price(self,value):
+        if value >= 0:
+            self.price = value
+
+    def get_spookieness(self):
+        if 0 <= self.spookieness < 5:
+            return "Youre not scaring anyone !" 
+        elif 5 <= self.spookieness < 10:
+            return "Ugh okay i guess its scary? "
+        elif 10 <= self.spookieness < 20:
+            return "F********* Dang "  
+        elif 0 >= self.spookieness:
+            return "So pleasent !" 
+        else:
+            return "try again next halloween"
+
+    def set_spookieness(self, value):
+        self.set_spookieness = value
+    
+    def haaaaa(self, increaseBy):
+        self.spookieness += increaseBy
+        print(self)
+
+    # to string
+    def __str__(self):
+        return f"{self.name} and its size is {self.size} and priced at {self.price} because {self.get_spookieness()}"
+
+
+costume1 = Costumes()
+costume1.set_color("brownish")
+costume1.set_size(6)
+costume1.set_price(1000000)
+costume1.set_spookieness(-10)
+
+listofCostumes = []
+listofCostumes.append(costume1)
+
+for costume in listofCostumes:
+    print(costume)
+
+# Question 1
 class Product:
     # This will run first as we create the clas
     def __init__(self, input_name):
