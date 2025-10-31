@@ -281,7 +281,7 @@ print(movie1)
 
 class Monster:
 
-    def __init__(self, _name):
+    def __init__(self, _name = "Krish"):
         self.name = _name
         self.size = -1
         self.num_of_teeth = -1
@@ -322,7 +322,7 @@ class Monster:
     def __str__(self):
         return f"Stats: Name: {self.get_name()}, size: {self.get_size()}, power: {self.get_power()} . It also have {self.get_num_of_teeth()} so it is {self.scare()}"
     
-moster1 = Monster("Krish")
+moster1 = Monster()
 moster1.set_num_of_teeth(30)
 moster1.set_power(1)
 moster1.set_size(0.1)
