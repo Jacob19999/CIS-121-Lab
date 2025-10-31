@@ -153,7 +153,7 @@ student1.study_for_exam()
 print(student1.introduce())
 print(student1.get_gpa())
 
-'''
+
 
 
 
@@ -174,8 +174,6 @@ class Candy:
 
     def get_price(self):
         return self.price
-    def get_price_cad(self):
-        return self.price * 1.4
     def set_price(self, value):
         if 0 <= value < 1000:
             self.price = value
@@ -220,3 +218,19 @@ bagOfCandies.append(candy1)
 
 for candy in bagOfCandies:
     print(candy)
+
+'''
+
+
+class Movie:
+    def __init__(self):
+        self.title = "Unknown"
+        self.genre = []
+        self.spookieness = 0
+        self.duration = 0
+
+        # Gets Adn Sets
+    def get_title(self):
+        return self.title
+    def set_title(self, value):
+        self.title = value 
