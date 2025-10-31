@@ -219,18 +219,112 @@ bagOfCandies.append(candy1)
 for candy in bagOfCandies:
     print(candy)
 
-'''
+
 
 
 class Movie:
     def __init__(self):
         self.title = "Unknown"
-        self.genre = []
+        self.genres = []
         self.spookieness = 0
         self.duration = 0
 
-        # Gets Adn Sets
+    # Gets and Sets
     def get_title(self):
         return self.title
     def set_title(self, value):
         self.title = value 
+
+    def get_genre(self):
+        output = ""
+        for genre in self.genres:
+            output += f" {genre}, "
+        return output
+    def set_genre(self, value):
+        self.genres.append(value)
+    
+    def get_duration(self):
+        return self.duration
+    def set_duration(self, value):
+        if 0 < value <= 10:
+            self.duration = value
+    
+    def get_spookieness(self):
+        return self.spookieness
+    def set_spookieness(self,value):
+        if 0 <= value <= 10:
+            self.spookieness = value
+    
+    # A method 
+    def get_reaction(self):
+        if 0 <= self.spookieness < 3:
+            return "Youre not scaring anyone !" 
+        elif 3 <= self.spookieness < 7:
+            return "Ugh okay i guess its scary? "
+        elif 7 <= self.spookieness < 10:
+            return "F********* call 911 !! "  
+        else:
+            return "idk"
+    # To string 
+    def __str__(self):
+        return f"{self.title} of genere {self.get_genre()} durition is {self.duration} and spookiness is {self.get_spookieness()} reaction : {self.get_reaction()}"
+    
+movie1 = Movie()
+movie1.set_title("Scream")
+movie1.set_genre("Scary")
+movie1.set_duration(1.75)
+movie1.set_spookieness(4)
+
+print(movie1)
+
+'''
+
+class Monster:
+
+    def __init__(self, _name):
+        self.name = _name
+        self.size = -1
+        self.num_of_teeth = -1
+        self.power = -1
+
+    # Get and Set
+    def get_name(self):
+        return self.name
+    
+    def get_size(self):
+        return self.size
+    def set_size(self, value):
+        if value > 0:
+            self.size = value
+        
+    def get_num_of_teeth(self):
+        return self.num_of_teeth
+    def set_num_of_teeth(self, value):
+        if value >= 0:
+            self.num_of_teeth = value
+    
+    def get_power(self):
+        return self.power
+    def set_power(self, value):
+        if value > 0:
+            self.power = value
+    
+    def scare(self):
+        if 80 > self.power > 50:
+            return "Very Scary"
+        elif self.power < 10:
+            return "Cute monster"
+        elif 10 < self.power < 50:
+            return "Moderately scary monster"
+        else:
+            return "RUN"
+        
+    def __str__(self):
+        return f"Stats: Name: {self.get_name()}, size: {self.get_size()}, power: {self.get_power()} . It also have {self.get_num_of_teeth()} so it is {self.scare()}"
+    
+moster1 = Monster("Krish")
+moster1.set_num_of_teeth(30)
+moster1.set_power(1)
+moster1.set_size(0.1)
+
+print(moster1)
