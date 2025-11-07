@@ -1,42 +1,42 @@
-class TVshow:
-    def __init__(self, title = "Unknown", genre = "Unknown"):
+class TVShow:
+    def __init__(self, title, genre):
         self.title = title
         self.genre = genre
 
     def get_genre(self):
         return self.genre
-    
-    def get_title(self):
-        return self.title
-    
-    def set_genre(self, _genre):
-        self.genre = _genre
-    
-    def set_title(self, _title):
-        self.title = _title
-    
+
+    def set_genre(self, new_genre):
+        self.genre = new_genre
+
+    def preview(self):
+        print(f"Title: {self.title}, Genre: {self.genre}")
+
     def __str__(self):
-        return f"The tv show is : {self.get_title()} and the genre is : {self.get_genre()}"
+        return f"{self.title} ({self.genre})"
 
 
 class NetflixDashboard:
-    def __init__(self, profile_name= "unknown"):
-        self.TVshows = []
+    def __init__(self, profile_name):
         self.profile_name = profile_name
-    
+        self.shows = [TVShow]
+
     def add_show(self, show):
-        self.TVshows.append(show)
+        self.shows.append(show)
 
     def display_recommendations(self):
-        for show in self.TVshows:
+        print(f"Recommendations for {self.profile_name}:")
+        for show in self.shows:
             print(show)
-            
 
-tvshow1 = TVshow("Two and a half men", "sitcom")
-tvshow2 = TVshow("Friends", "sitcom")
+    def __str__(self):
+        return f"NetflixDashboard for {self.profile_name} with {len(self.shows)} shows"
 
-profile1 = NetflixDashboard("Evan")
-profile1.add_show(tvshow1)
-profile1.add_show(tvshow2)
 
-profile1.display_recommendations()
+# Part (c)
+dashboard = NetflixDashboard("UserProfile")
+show1 = TVShow("The Crown", "Drama")
+show2 = TVShow("Black Mirror", "Sci-Fi")
+dashboard.add_show(show1)
+dashboard.add_show(show2)
+dashboard.display_recommendations()
