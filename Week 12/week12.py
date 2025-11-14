@@ -1,46 +1,30 @@
-class RGBColor:
-    # For each parameter (0 - 255)
-    def __init__(self, r,g,b):
-        self.r = r
-        self.g = g
-        self.b = b
+
+class RationalNumber:
+    def __init__(self, _numerator = 1 , _denominator = 1):
+        self.numerator = _numerator
+        self.denominator = _denominator
     
-    def __add__(self, color2):
-        color3 = RGBColor(0, 0, 0)
-        color3.r = (self.r + color2.r ) / 2
-        color3.g = (self.g + color2.g ) / 2
-        color3.b = (self.b + color2.b ) / 2
-        return color3
-
-    def __str__(self):
-        return f"RGB Values: ({self.r}, {self.g}, {self.b})"
-
-c1 = RGBColor(170, 150, 200)
-c2 = RGBColor(30, 100, 60)
-c3 = c1 + c2
-
-print("Color 1 = " , c1)
-print("Color 2 = " , c2)
-print("Color 3 = " , c3)
-
-# Question 1
-class Vector:
-    def __init__(self, x, y):
-        self.a = x
-        self.b = y
+    def __add__(self, other_fraction):
+        new_numerator = 0
+        new_denominator = 0 
+        ' if the denominator is the same !'
+        if self.denominator == other_fraction.denominator:
+            new_numerator = self.numerator + other_fraction.numerator
+            new_denominator = self.denominator
+        else:
+            'if denominator is different , calculate new denominator'
+            new_denominator = self.denominator * other_fraction.denominator
+            '1/3 + 1/2'
+            '2/6 + 3/6'
+            '5/6'
+            new_numerator = (self.numerator * other_fraction.denominator) +  (other_fraction.numerator * self.denominator)
+        
+        return RationalNumber(new_numerator, new_denominator)
     
-    def __eq__(self, vector2):
-        return self.a == vector2.a and self.b == vector2.b
-
     def __str__(self):
-        return f"Vector: ({self.a}, {self.b})"
-
-vector1 = Vector(3, 4)
-vector2 = Vector(1, 4)
-print("Is vector 1 and 2 same ?")
-print(vector1 == vector2)
-
-
-
-
-
+        return f"{self.numerator} / {self.denominator}"
+    
+fraction1 = RationalNumber(1, 3)
+fraction2 = RationalNumber(1 , 2)
+fraction3 = fraction1 + fraction2
+print(fraction3)
