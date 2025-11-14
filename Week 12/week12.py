@@ -18,14 +18,27 @@ class RGBColor:
 c1 = RGBColor(170, 150, 200)
 c2 = RGBColor(30, 100, 60)
 c3 = c1 + c2
+
 print("Color 1 = " , c1)
 print("Color 2 = " , c2)
 print("Color 3 = " , c3)
 
+# Question 1
+class Vector:
+    def __init__(self, x, y):
+        self.a = x
+        self.b = y
+    
+    def __eq__(self, vector2):
+        return self.a == vector2.a and self.b == vector2.b
 
+    def __str__(self):
+        return f"Vector: ({self.a}, {self.b})"
 
-
-
+vector1 = Vector(3, 4)
+vector2 = Vector(1, 4)
+print("Is vector 1 and 2 same ?")
+print(vector1 == vector2)
 
 
 
