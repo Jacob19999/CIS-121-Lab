@@ -106,7 +106,7 @@ class RationalNumber:
         self.numerator = numerator
         self.denominator = denominator
     
-    def __add__(self, other):
+    def __add__(self, other ):
         common_denom = self.denominator * other.denominator
         new_num = self.numerator * other.denominator + other.numerator * self.denominator
         return RationalNumber(new_num, common_denom)
