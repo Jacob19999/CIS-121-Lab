@@ -1,25 +1,34 @@
-import random 
+import random
 
-# Define the file , quizint.txt and "w" which is write as txt_file
-with open("Week 13/QuizInts.txt", "w") as txt_file:
-    #Iterate through 0 - 100
+# Option 1
+rand_nums = ""
+quiz_int_file = open("Week 13/QuizInts.txt" , "w")
+
+for i in range(100):
+    rand_num = random.randint(50,200)
+    rand_nums += str(rand_num) + "\n"
+
+quiz_int_file.write(rand_nums)
+quiz_int_file.close()
+
+# Option 2
+with open("Week 13/QuizInts.txt" , "w") as quiz_int_file:
     for i in range(100):
-        # For each iteration, generate random num
-        num = random.randint(50,200)
-        # Wrie to the txtfile
-        txt_file.write(str(num) + "\n")
+        rand_num = random.randint(50,200)
+        rand_nums += str(rand_num) + "\n"
+    quiz_int_file.write(rand_nums)
 
 
 # Question 7
-total_visitor = 0
-num_of_days = 0
+total_visitor_count = 0
+days = 0
+with open("Week 13/LibraryVisits.csv") as visits:
+    for row in visits:
+        row_items = row.split(",")
+        if row_items[0] != "Date":
+            total_visitor_count += int(row_items[1])
+            days += 1
 
-with open("Week 13/LibraryVisits.csv", "r") as lib_visits:
-    for _row in lib_visits:
-        # CSV - comma separated value
-        values = _row.split(",")
-        # Parsing of a int value "191/n" -> 191 
-        total_visitor += int(values[1])
-        num_of_days += 1
+print(f"Average Visitor COunt is {total_visitor_count/days}")
 
-print(f"Average visitors over {num_of_days} days is { total_visitor / num_of_days}")
+
